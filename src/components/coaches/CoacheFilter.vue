@@ -20,7 +20,9 @@
 h2 {
   margin: 0.5rem 0;
 }
-
+h3 {
+  margin: 0 auto;
+}
 .filter-option {
   margin-right: 1rem;
 }
