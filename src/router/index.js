@@ -36,6 +36,7 @@ const routes = [
       {
         path: "contact",
         name: "contact",
+        props: true,
         component: () =>
           import(
             /* webpackChunkName: "about" */ "../pages/requests/ContactCoach.vue"

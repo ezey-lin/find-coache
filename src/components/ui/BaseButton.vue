@@ -24,7 +24,7 @@ export default {
       type: String,
       require: false,
       // eslint-disable-next-line vue/require-valid-default-prop
-      default: false,
+      default: "no",
     },
   },
 };
