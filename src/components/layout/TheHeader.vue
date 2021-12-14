@@ -4,9 +4,6 @@
       <h1>Find a Coach</h1>
       <ul>
         <li>
-          <router-link to="/">Find a Coach</router-link>
-        </li>
-        <li>
           <router-link to="/coaches">All Coaches</router-link>
           <router-link to="/requests">Request</router-link>
         </li>

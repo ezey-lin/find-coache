@@ -11,7 +11,7 @@ export default {
       areas: data.areas,
     };
     const response = await fetch(
-      `https://vue-http-demo-a3633-default-rtdb.firebaseio.com/coaches/${userId}.json`,
+      `https://find-coach-vue-6f1e9-default-rtdb.firebaseio.com/coaches/${userId}.json`,
       {
         method: "PUT",
         body: JSON.stringify(coachData),
@@ -26,9 +26,10 @@ export default {
       id: userId,
     });
   },
-  async loadCoaches(context) {
+  async loadCoaches(context, payload) {
+    if (!payload.forceRefresh && !context.getters.shouldUpdate) return;
     const response = await fetch(
-      `https://vue-http-demo-a3633-default-rtdb.firebaseio.com/coaches.json`
+      `https://find-coach-vue-6f1e9-default-rtdb.firebaseio.com/coaches.json`
     );
     const responseData = await response.json();
     if (!response.ok) {
@@ -49,5 +50,6 @@ export default {
       coaches.push(coach);
     }
     context.commit("setCoaches", coaches);
+    context.commit("setFetchTimestamp");
   },
 };
