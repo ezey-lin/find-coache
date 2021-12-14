@@ -24,6 +24,7 @@ export default {
     context.commit("addRequest", newRequest);
   },
   async fetchRequests(context) {
+    if (!context.getters.shouldUpdate) return;
     const coachId = context.rootGetters.userId;
     const respones = await fetch(
       `https://find-coach-vue-6f1e9-default-rtdb.firebaseio.com/requests/${coachId}.json`
@@ -44,5 +45,6 @@ export default {
       requests.push(request);
     }
     context.commit("setRequests", requests);
+    context.commit("setFetchTimestamp");
   },
 };
