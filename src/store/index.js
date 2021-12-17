@@ -1,13 +1,8 @@
 import { createStore } from "vuex";
 import coaches from "./modules/coaches/index.js";
 import requests from "./modules/requests/index.js";
+import auth from "./modules/auth/index";
 export default createStore({
-  state() {
-    return {
-      userId: "c3",
-      isCoach: false,
-    };
-  },
   mutations: {
     setIsCoach(state) {
       state.isCoach = true;
@@ -21,11 +16,9 @@ export default createStore({
   modules: {
     coaches,
     requests,
+    auth,
   },
   getters: {
-    userId(state) {
-      return state.userId;
-    },
     isCoach(state) {
       return state.isCoach;
     },

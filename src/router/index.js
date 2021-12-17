@@ -61,6 +61,12 @@ const routes = [
       ),
   },
   {
+    path: "/auth",
+    name: "UserAuth",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../pages/auth/UserAuth.vue"),
+  },
+  {
     path: "/:notFound(.*)",
     component: () =>
       import(/* webpackChunkName: "about" */ "../pages/NotFound.vue"),
